@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="spacer">
+                    <h1><strong>Welcome to Rock Paper Scissors!</strong></h1>
+                    The game is pretty simple, just choose rock, paper or scissors and then click on the PLAY button</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="spacer text-center">Player's choice</h2>
+                <div id="player-hand">
+                    <img src="images/rockleft.png" class="img-responsive center-block" id="player-hand-image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="spacer text-center">Computer's choice</h2>
+                <div id="computer-hand">
+                    <img src="images/rockright.png" class="img-responsive center-block" id="computer-hand-image">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <form>
+                    <div class="small-spacer">
+                        <div data-toggle="buttons">
+                            <label class="btn btn-primary btn-lg active btn-space">
+                            <input type="radio" name="options" id="rockoption" autocomplete="off" onclick="playGame('rock')">Rock</label>
+                            <label class="btn btn-primary btn-lg btn-space">
+                            <input type="radio" name="options" id="paperoption" autocomplete="off" onclick="playGame('paper')">Paper</label>
+                            <label class="btn btn-primary btn-lg btn-space">
+                            <input type="radio" name="options" id="scissoroption" autocomplete="off" onclick="playGame('scissor')">Scissors</label>
+                            <input type="hidden" id="current-player-value" value="">
+                            <input type="hidden" id="player-score" value="">
+                            <input type="hidden" id="computer-score" value="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="small-spacer">
+                    <button class="btn btn-secondary btn-lg btn-space" onclick="play()">
+                            PLAY!
+                        </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="gameResult" class="text-center">Who's going to win?
+                </h1>
+                <h1 id="gameResult" class="text-center"> Player Score: <span id="pScore"></span> Computer Score: <span id="cScore"></span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

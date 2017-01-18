@@ -1,0 +1,55 @@
+html,
+body,
+h1,
+h2,
+h3,
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: white;
+    margin-top:30px;
+}
+
+body {
+    background-image: url("images/wood.jpg");
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.spacer {
+    margin: 60px 0 60px 0;
+}
+
+.small-spacer {
+    margin: 100px 0 30px 0;
+}
+
+#player-hand,
+#computer-hand {
+    margin-top: 100px;
+}
+
+.radioButtons {
+    font-size: 60px;
+}
+
+.btn-space {
+    margin-right: 20px;
+    margin-top: 20px;
+}
