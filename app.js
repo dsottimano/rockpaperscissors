@@ -1,40 +1,34 @@
  var playerHolderScore = 0;
  var computerHolderScore = 0;
-var player;
+ var player;
 
- function playGame(choice) {
+ function playerChoice(choice) {
      if (choice === 'rock') {
          document.getElementById("player-hand-image").src = "images/rockleft.png";
-
-     } else if(choice === 'paper') {
+     } else if (choice === 'paper') {
          document.getElementById("player-hand-image").src = "images/paperleft.png";
-
      } else {
-     document.getElementById("player-hand-image").src = "images/scissorsleft.png";
+         document.getElementById("player-hand-image").src = "images/scissorsleft.png";       
      }
 
-player = choice;
-
-
+     player = choice;
+     console.log(player)
  }
 
 
  function play() {
      document.getElementById('computer-hand-image').classList.add("spinner");
      var timeOut = setTimeout(function () {
-         runScript();
+         computerChoice();
          document.getElementById('computer-hand-image').classList.remove("spinner");
      }, 1000)
 
  }
 
- function runScript() {
-     let playerHand = document.getElementById("current-player-value").value;
+ function computerChoice() {
      let generateComputerHand = Math.floor(Math.random() * 3) + 1;
+     let finalComputerHand;
 
-
-
-     var finalComputerHand;
      switch (generateComputerHand) {
          case 1:
              finalComputerHand = "rock"
@@ -47,11 +41,7 @@ player = choice;
              break;
      }
 
-
-
      document.getElementById("computer-hand-image").src = "images/" + finalComputerHand + "right.png";
-     console.log(finalComputerHand)
-
      whowon(player, finalComputerHand);
 
 
@@ -59,15 +49,14 @@ player = choice;
 
 
  function whowon(player, computer) {
+     console.log(player, "player", computer, "computer")
      let playerScore = document.getElementById("player-score").value;
      let computerScore = document.getElementById("computer-score").value;
-     debugger
+     
 
      if (player === computer) {
-
          document.getElementById("gameResult").innerHTML = "Boring... you tied.";
          console.log("tie")
-       
      } else if (player === 'rock' && computer === 'scissors') {
          console.log("player won")
          document.getElementById("gameResult").innerHTML = "Woohooo, you won";
